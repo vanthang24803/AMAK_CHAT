@@ -1,0 +1,39 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier  \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format:check": "pnpm format --check",
+    "format:write": "pnpm format --write",
+    "build": "pnpm exec nx run-many --target=build",
+    "tsc": "pnpm exec nx run-many --target=tsc",
+    "lint": "pnpm exec nx run-many --target=lint",
+    "validate": "pnpm format:write && pnpm tsc && pnpm lint && pnpm build",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.4",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/express": "^4.17.21",
+    "@typescript-eslint/eslint-plugin": "^8.1.0",
+    "@typescript-eslint/parser": "^8.1.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.9",
+    "module-alias": "^2.2.3",
+    "nx": "^19.6.0",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}

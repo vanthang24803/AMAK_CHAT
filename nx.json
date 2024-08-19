@@ -1,0 +1,19 @@
+{
+  "targetDefaults": {
+    "dev": {
+      "dependsOn": ["^dev"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["{workspaceRoot}/dist, build"],
+      "cache": true
+    },
+    "tsc": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    }
+  },
+  "defaultBase": "master"
+}

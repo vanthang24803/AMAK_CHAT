@@ -1,0 +1,17 @@
+{
+  "name": "@amak/db",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prisma": "^5.18.0"
+  },
+  "nx": {}
+}

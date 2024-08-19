@@ -1,0 +1,17 @@
+{
+  "name": "@amak/socket",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^4.7.5"
+  },
+  "nx": {}
+}
