@@ -9,11 +9,12 @@
     "build": "rm -rf ./dist && tsc --build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "May Nguyen",
+  "license": "MIT",
   "devDependencies": {
     "@types/morgan": "^1.9.9",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "picocolors": "^1.0.1"
   },
   "nx": {}
 }

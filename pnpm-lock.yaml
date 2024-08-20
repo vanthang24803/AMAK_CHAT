@@ -60,9 +60,15 @@ importers:
 
   api:
     dependencies:
+      '@amak/db':
+        specifier: workspace:*
+        version: link:../libs/db
       '@amak/shared':
         specifier: workspace:*
         version: link:../libs/shared
+      '@amak/socket':
+        specifier: workspace:*
+        version: link:../libs/socket
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -79,9 +85,27 @@ importers:
 
   libs/db:
     dependencies:
+      '@amak/shared':
+        specifier: workspace:*
+        version: link:../shared
       prisma:
         specifier: ^5.18.0
         version: 5.18.0
+    devDependencies:
+      '@prisma/client':
+        specifier: ^5.18.0
+        version: 5.18.0(prisma@5.18.0)
+      '@types/morgan':
+        specifier: ^1.9.9
+        version: 1.9.9
+      morgan:
+        specifier: ^1.10.0
+        version: 1.10.0
+      picocolors:
+        specifier: ^1.0.1
+        version: 1.0.1
+
+  libs/kafka: {}
 
   libs/shared:
     devDependencies:
@@ -91,9 +115,15 @@ importers:
       morgan:
         specifier: ^1.10.0
         version: 1.10.0
+      picocolors:
+        specifier: ^1.0.1
+        version: 1.0.1
 
   libs/socket:
-    dependencies:
+    devDependencies:
+      '@amak/shared':
+        specifier: workspace:*
+        version: link:../shared
       socket.io:
         specifier: ^4.7.5
         version: 4.7.5
@@ -303,6 +333,15 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@prisma/client@5.18.0':
+    resolution: {integrity: sha512-BWivkLh+af1kqC89zCJYkHsRcyWsM8/JHpsDMM76DjP3ZdEquJhXa4IeX+HkWPnwJ5FanxEJFZZDTWiDs/Kvyw==}
+    engines: {node: '>=16.13'}
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
 
   '@prisma/debug@5.18.0':
     resolution: {integrity: sha512-f+ZvpTLidSo3LMJxQPVgAxdAjzv5OpzAo/eF8qZqbwvgi2F5cTOI9XCpdRzJYA0iGfajjwjOKKrVq64vkxEfUw==}
@@ -1610,6 +1649,9 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
+  picocolors@1.0.1:
+    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
+
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -2226,6 +2268,10 @@ snapshots:
 
   '@nx/nx-win32-x64-msvc@19.6.1':
     optional: true
+
+  '@prisma/client@5.18.0(prisma@5.18.0)':
+    optionalDependencies:
+      prisma: 5.18.0
 
   '@prisma/debug@5.18.0': {}
 
@@ -3749,6 +3795,8 @@ snapshots:
   path-to-regexp@0.1.7: {}
 
   path-type@4.0.0: {}
+
+  picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
 

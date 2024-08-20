@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+enum ChannelType {
+  ADMIN
+  AI
+}
+
+model Channel {
+  id         String      @id @default(uuid()) @map("_id")
+  name       String?
+  type       ChannelType 
+  senderId   String
+  receiverId String
+  createAt   DateTime    @default(now())
+  updateAt   DateTime    @updatedAt()
+  messages   Message[]
+}
+
+model Message {
+  id        String   @id @default(uuid()) @map("_id")
+  content   String
+  channelId String
+  userId    String
+  seen      Boolean  @default(false)
+  edited    Boolean  @default(false)
+  createAt  DateTime @default(now())
+  updateAt  DateTime @updatedAt()
+  channel   Channel  @relation(fields: [channelId], references: [id])
+}

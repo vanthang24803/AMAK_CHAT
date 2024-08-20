@@ -1,7 +1,9 @@
-export class AppError extends Error {
-  status: number
+import { HttpStatusCode } from "axios"
 
-  constructor(message: any, status: number = 500) {
+export class AppError extends Error {
+  status: HttpStatusCode
+
+  constructor(message: any, status: HttpStatusCode = 500) {
     super(message)
     this.status = status
   }

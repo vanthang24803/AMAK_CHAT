@@ -10,8 +10,8 @@
     "start": "node dist/src/main.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "May Nguyen",
+  "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "nodemon": "^3.1.4",
@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "@amak/shared": "workspace:*"
+    "@amak/shared": "workspace:*",
+    "@amak/db": "workspace:*",
+    "@amak/socket": "workspace:*"
   },
   "nx": {}
 }

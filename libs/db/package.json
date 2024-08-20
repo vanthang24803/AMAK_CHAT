@@ -1,17 +1,27 @@
 {
   "name": "@amak/db",
-  "private": true,
   "version": "1.0.0",
+  "private": "true",
   "description": "",
-  "main": "build/main.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build"
+    "build": "rm -rf ./dist && tsc --build",
+    "generate": "npx prisma generate",
+    "migrate": "npx prisma db push"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "prisma": "^5.18.0"
+  "author": "May Nguyen",
+  "license": "MIT",
+  "devDependencies": {
+    "@prisma/client": "^5.18.0",
+    "@types/morgan": "^1.9.9",
+    "morgan": "^1.10.0",
+    "picocolors": "^1.0.1"
   },
-  "nx": {}
+  "nx": {},
+  "dependencies": {
+    "prisma": "^5.18.0",
+    "@amak/shared": "workspace:*"
+  }
 }
