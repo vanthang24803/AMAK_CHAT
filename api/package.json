@@ -14,14 +14,18 @@
   "license": "MIT",
   "devDependencies": {
     "@types/cors": "^2.8.17",
+    "@types/jsonwebtoken": "^9.0.6",
     "nodemon": "^3.1.4",
     "nx": "19.6.1"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "@amak/shared": "workspace:*",
     "@amak/db": "workspace:*",
-    "@amak/socket": "workspace:*"
+    "@amak/shared": "workspace:*",
+    "@amak/socket": "workspace:*",
+    "@amak/http": "workspace:*",
+    "@amak/router": "workspace:*",
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.2"
   },
   "nx": {}
 }

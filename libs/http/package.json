@@ -1,0 +1,19 @@
+{
+  "name": "@amak/http",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc --build"
+  },
+  "keywords": [],
+  "author": "May Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "@amak/shared": "workspace:*"
+  },
+  "devDependencies": {},
+  "nx": {}
+}
