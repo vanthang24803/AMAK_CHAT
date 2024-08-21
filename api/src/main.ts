@@ -22,9 +22,9 @@ const PORT: string | number = process.env.PORT || 3002
 
 const main = async () => {
   await connectionDb()
-  const server = createServer(app, "*")
+  const ws = createServer(app, "*")
 
-  server.listen(PORT, () => log.success(`App listening on port ${PORT}`))
+  ws.listen(PORT, () => log.success(`App listening on port ${PORT}`))
 
   app.get("/", (req: AMAKRequest, res: AMAKResponse) => {
     res.send({
