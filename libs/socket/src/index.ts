@@ -16,11 +16,10 @@ const createServer = (app: Application, url: string) => {
 
   io.on("connection", async (socket) => {
     log.success(`Account ${socket.id} connected!`)
-    
+
     socket.on("message", (data: any) => {
-      log.info(`Received message from ${socket.id}: ${JSON.stringify(data)}`);
-    });
-    
+      log.info(`Received message from ${socket.id}: ${JSON.stringify(data)}`)
+    })
 
     socket.on("disconnect", () => {
       log.error(`Socket ${socket.id} disconnected!`)
